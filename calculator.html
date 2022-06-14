@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        button {
+            font-size: 200%;
+            width: 80px;
+            height: 80px;
+            font: normal 40pt italic;
+            border-radius: 5pt;
+            color: chartreuse;
+        }
+
+        #Eq {
+            color: blueviolet;
+            background-color: antiquewhite
+        }
+        #divide,#Sub,#Add,#Multiply {
+            color: blueviolet;
+            background-color:lightsteelblue
+        }
+        .clear {
+            background-color: red
+                
+        }
+        #button{
+            background-color:gray;
+            border:2px dotted;
+            padding:10px
+        }
+
+
+        .calculaytor{
+            background-color:aqua;
+            border:5px solid;
+            align-content:center
+        }
+
+        input {
+            font-size: 40px;
+            width: 330px;
+            height: 80px;
+            text-align: right;
+            border-radius: 5pt;
+            color: black;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            debugger;
+            $(".but").on('click', function () {
+              
+                $("#display").val($("#display").val() + $(this).html());
+            })
+            $("#Eq").on('click', function () {
+                debugger;
+                $("#display").val(eval($("#display").val())); /used to evaluate the expressions/
+            })
+            $(".clear").on('click', function () {
+                debugger;
+                $("#display").val('');
+            })
+        })
+
+    </script>
+
+
+
+</head>
+<body>
+    <table class="calculaytor">
+      
+        <tr>
+            <td colspan="4">
+                <input type="text" id="display" name="display" value="" readonly>
+            </td>
+        </tr>
+        <tr>
+            <td><button type="button" class="but" id="button">7</button></td>
+            <td><button type="button" class="but" id="button" >8</button></td>
+            <td><button type="button" class="but" id="button">9</button></td>
+            <td><button type="button" class="but" id="Multiply">*</button></td> <!--you can also take&divide; and same for sub and divide-->
+
+        </tr>
+        <tr>
+            <td><button type="button" class="but" id="button" value="4">4</button></td>
+            <td><button type="button" class="but" id="button" value="5">5</button></td>
+            <td><button type="button" class="but" id="button" value="6">6</button></td>
+            <td><button type="button" class="but" id="divide">/</button></td>
+
+        </tr>
+        <tr>
+            <td><button type="button" class="but" id="button" value="1">1</button></td>
+            <td><button type="button" class="but" id="button" value="2">2</button></td>
+            <td><button type="button" class="but" id="button" value="3">3</button></td>
+            <td><button type="button" class="but" id="Sub">-</button></td>
+
+        </tr>
+        <tr>
+            <td><button type="button" class="but" id="button" value="0">0</button></td>
+            <td><button type="button" class="clear">C</button></td>
+            <td><button type="button"  id="Eq">=</button></td>
+            <td><button type="button" class="but" id="Add">+</button></td>
+
+
+        </tr>
+       
+    </table>
+</body>
+</html>
